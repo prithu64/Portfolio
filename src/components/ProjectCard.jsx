@@ -1,7 +1,7 @@
 import { FaGithub } from "react-icons/fa6";
 function ProjectCard({projectName,description,link,github,tech}) {
   return (
-    <div className='w-[300px] border h-[250px] dark:border-white/30 dark:text-white p-3  flex flex-col  rounded-sm'>
+    <div className='w-[300px] border h-[250px] dark:border-white/30 dark:text-white p-3  flex flex-col backdrop-blur-lg dark:bg-white/5  rounded-sm'>
                 <h1 className='font-bold text-xs font-press mb-2'>{projectName}</h1>
                  
                 <p className='text-sm mb-4 h-[100px] dark:text-white/60'>{description}</p>
