@@ -15,4 +15,12 @@ export const  ProjectData = [
         link : "https://interntezu.netlify.app ",
         github : "https://github.com/prithu64/SIP-2024"
     },
+      {   
+        id:3,
+        projectName : "SubtrackIt",
+        description: "A fullstack MERN app to manage your subscriptions. Track total cost, view active services, upcoming payments, and more—all in one clean dashboard.",
+        tech : ["ReactJs","MongoDB","ExpressJS","Javascript","TailwindCss","Nodemailer"],
+        link : "https://subtrackit.netlify.app/",
+        github : "https://github.com/prithu64/SubscriptionT-frontend"
+    },
 ]
