@@ -1,16 +1,28 @@
 import ProjectCard from './ProjectCard'
 import { ProjectData } from '../data/ProjectData'
+import { useState } from 'react'
 
 
 function Projects() {
+ const [visible,setVisible] = useState(2) 
+
+ const showMore = ()=>{
+  setVisible(visible + 2)
+ }
+
+  const showLess = ()=>{
+  setVisible(visible - 2)
+ }
+
  console.log(ProjectData)
-  return (
+
+ return (
 <div className='w-full flex flex-col gap-y-4'>
      <div className='mx-auto'>
             <h1 className='font-press dark:text-white'>LATEST PROJECTS</h1>
      </div>
     <div className='py-3 grid grid-cols-1 md:grid-cols-2 mx-auto gap-4'>
-        {ProjectData.map((project) => (
+        {ProjectData.slice(0,visible).map((project) => (
           <ProjectCard
             key={project.id}
             projectName={project.projectName}
@@ -21,6 +33,16 @@ function Projects() {
           />
          ))}
       </div>
+      {
+        visible < ProjectData.length && (
+          <div onClick={showMore} className='mx-auto dark:text-white text-xs border dark:border-white/30 px-1 py-2 rounded-sm hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>Load more</div>
+        )
+      }
+       {
+        visible > 2 && (
+          <div onClick={showLess} className='mx-auto dark:text-white text-xs border dark:border-white/30 px-1 py-2 rounded-sm hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>Show less</div>
+        )
+       }
     </div>
   )
 }
