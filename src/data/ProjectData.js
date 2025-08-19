@@ -23,4 +23,12 @@ export const  ProjectData = [
         link : "https://subtrackit.netlify.app/",
         github : "https://github.com/prithu64/SubscriptionT-frontend"
     },
+       {   
+        id:4,
+        projectName : "SugoiRead",
+        description: "SugoiRead is an anime inspired web app where fans can explore must read mangas, leave anonymous reviews, suggest new mangas, and enjoy a smooth, interactive UI built with React, Tailwind, and mongoDB.",
+        tech : ["ReactJs","MongoDB","ExpressJS","Javascript","TailwindCss","Nodejs"],
+        link : "https://sugoiread.netlify.app/",
+        github : "https://github.com/prithu64/SugoiRead"
+    },
 ]
