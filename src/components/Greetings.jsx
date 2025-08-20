@@ -1,12 +1,12 @@
-import React from 'react'
+import { useState } from "react";
 import { MdContentCopy } from "react-icons/md";
 
 function Greetings() {
- 
+   const [emailCopyMessage,setEmailCopyMessage] = useState(false) 
    const handleEmailCopy = async()=>{
     try {
         await navigator.clipboard.writeText("prachurjyagos@gmail.com")
-        alert("Email copied")
+        setEmailCopyMessage(true)
     } catch (error) {
         console.log("failed to copy",error)
         alert("Copy failed")
@@ -28,6 +28,20 @@ function Greetings() {
             <h1 className='underline text-blue-500'>Email</h1>
             <button onClick={handleEmailCopy} className='cursor-pointer text-black/60 dark:text-white/60'><MdContentCopy size={15}/></button>
         </div>
+        
+          
+                <div className={`${emailCopyMessage ? "opacity-100 scale-100":"opacity-0 scale-95 pointer-events-none"} inset-0 justify-center flex items-center fixed z-40 transition-all duration-300 `}>
+
+                    <div className="inset-0 absolute  bg-white/40 backdrop-blur-xs"/>
+                    <div className="flex  relative">
+                     <p className="border rounded-sm p-2 z-50 shadow-lg bg-white text-xs dark:text-black">Email Copied Successfully</p>
+                     <h1 onClick={()=>{setEmailCopyMessage(false)}} className="text-end cursor-pointer text-black z-50 absolute -top-5 right-0">X</h1>
+                    </div>
+                  
+                    
+                </div>
+            
+        
     </div>
   )
 }
